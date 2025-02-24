@@ -12,7 +12,7 @@ class ApiService {
         final List<dynamic> data = response.data['data'];
         return data.map((json) => BitcoinEntity.fromJson(json)).toList();
       }
-      // TODO(develop): Добавить обработку ошибок !
+      // TODO(develop): Добавить обработку разных statusCode по необходимости!
       else {
         throw Exception('Ошибка загрузки данных');
       }

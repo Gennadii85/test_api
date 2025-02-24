@@ -5,4 +5,5 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const MyApp());
+  // TODO(develop): Вынести все константы в отдельный файл
 }
