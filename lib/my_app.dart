@@ -6,6 +6,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Scaffold(body: BodyApp()));
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(body: BodyApp()),
+    );
   }
 }

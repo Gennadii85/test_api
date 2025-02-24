@@ -15,7 +15,7 @@ class BodyApp extends StatefulWidget {
 class _BodyAppState extends State<BodyApp> {
   final List<BitcoinEntity?> _data = [];
   final ScrollController _scrollController = ScrollController();
-  final int _currentIndex = 0;
+  int _currentIndex = 0;
 
   @override
   void initState() {
@@ -33,7 +33,7 @@ class _BodyAppState extends State<BodyApp> {
   void _loadMoreData() {
     setState(() {
       _data.addAll(_data.skip(_currentIndex).take(15));
-      _currentIndex + 15;
+      _currentIndex += 15;
     });
   }
 
@@ -53,6 +53,7 @@ class _BodyAppState extends State<BodyApp> {
                   description: _data[index]?.symbol ?? 'no data',
                   color: ColorGenerateService.generateRandomColor(),
                   price: _data[index]?.rateUsd.toString() ?? '0',
+                  symbol: _data[index]?.symbol ?? 'no data',
                 ),
           );
         } else {
